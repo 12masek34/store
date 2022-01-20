@@ -1,0 +1,15 @@
+<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Категории
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              {% for category in categories %}
+              <li><a class="dropdown-item" href="{% url 'category' pk=category.pk %}">{{ category.title }}</a></li>
+              {% endfor %}
+          </ul>
+        </li>
+      </ul>
+    </div>
+

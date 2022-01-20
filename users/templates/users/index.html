@@ -1,0 +1,31 @@
+{% extends "users/base.html" %}
+{% block content %}
+
+
+
+
+<div class="container row row-cols-1 row-cols-md-3 g-4">
+    {% for product in products %}
+  <div class="col">
+    <div class="card h-100">
+
+        {% if product.image%}
+      <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.title }}">
+              {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text">{{ product.text }}</p>
+
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">
+            <h5>Цена: {{ product.price }}</h5>{{ product.created_at }}
+            <a href="{% url 'product' pk=product.pk %}" type="button" class="btn btn-sm btn-outline-secondary">Смотреть</a>
+        </small>
+      </div>
+    </div>
+  </div>
+     {% endfor %}
+
+
+            {% endblock content %}

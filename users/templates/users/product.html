@@ -1,0 +1,30 @@
+{% extends "users/base.html" %}
+{% block content %}
+
+
+<div class="container ">
+  <div class="col">
+    <div class="card h-100">
+
+        {% if product.image%}
+      <img src="{{ product.image.url }}" width="500" alt="{{ product.title }}">
+              {% endif %}
+
+      <div class="card-body">
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text">{{ product.text }}</p>
+      </div>
+      <br>
+      <br>
+        <h6>{{ product.author }}</h6> Контакты: {{ product.phone }}
+      <div class="card-footer">
+        <small class="text-muted">
+            <h5>Цена: {{ product.price }}</h5>{{ product.created_at }}
+
+        </small>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock content %}
